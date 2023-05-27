@@ -34,14 +34,14 @@ export class SetupServer {
                 origin: config.CLIENT_URL,
                 credentials: true, //to use the cookies
                 optionsSuccessStatus: 200, //for most of the browsers is nurmal, but nut in Explorer browser.
-                methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
+                methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
             })
         );
     }
 
     private standardMiddleware(app: Application): void {
-        app.use(compression()); //Returns the compression middleware using the given options
-        app.use(json({ limit: '50mb' })); //json allows us to send and get json, limit for limit the size of user req
+        app.use(compression()); //compress response bodies for all requests
+        app.use(json({ limit: '50mb' })); //json allows us to send and get json, limit for limit the size of user req/request
         app.use(urlencoded({ extended: true, limit: '50mb' })); //recognize the incoming Request Object as strings or arrays.
     }
 
