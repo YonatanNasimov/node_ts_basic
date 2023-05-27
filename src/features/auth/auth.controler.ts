@@ -11,7 +11,7 @@ import { BadRequestError } from "@middlewares/error-handler";
 
 class AuthCtrl {
     public auth(req: Request, res: Response): void {
-        res.json({ msg: "Auth Work..." })
+        res.json({ message: "Auth Work..." })
     }
 
     @joiValidation(validUser)

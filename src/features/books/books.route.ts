@@ -15,7 +15,7 @@ class BookRoutes {
         // test
         this.router.get(`${BOOK_PATH}`, bookCtrl.book);
         // getallbooks
-        this.router.get(`${BOOK_PATH}/getallbooks`, verifyUser, bookCtrl.getAllBooks);
+        this.router.get(`${BOOK_PATH}/getAllBooks`, bookCtrl.getAllBooks);
         // create a book
         this.router.post(`${BOOK_PATH}/create`, verifyUser, bookCtrl.createBook);
         // delete a book by _id

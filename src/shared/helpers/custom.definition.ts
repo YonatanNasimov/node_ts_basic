@@ -1,11 +1,11 @@
-import { IUser } from "@auth/auth.interface";
-
+import { IToken, IUser } from "@auth/auth.interface";
+import jwt from "jsonwebtoken"
 
 declare global {
     namespace Express {
         export interface Request {
             user: IUser;
-            tokenData: Object;
+            tokenData: IToken | jwt.JsonWebTokenError | any;
             role: string;
         }
     }

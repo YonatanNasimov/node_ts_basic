@@ -7,11 +7,10 @@ import { IBook } from '@books/books.interface';
 
 class BookCtrl {
     public book(req: Request, res: Response): void {
-        res.json({ msg: "Books Route Work..." })
+        res.json({ message: "Books Route Work..." })
     }
 
-    // get all Book
-    @joiValidation(validBook)
+    // get all Books
     public async getAllBooks(req: Request | any, res: Response): Promise<Response | void> {
         const perPage: number = Math.min(req.query.perPage, 20) || 10;
         const page: number = req.query.page || 1;
@@ -75,7 +74,7 @@ class BookCtrl {
                 data = await BookModel.updateOne({ _id: bookId }, req.body)
             }
             else {
-                data = await BookModel.updateOne({ _id: bookId, user_id: req.tokenData._id }, req.body)
+                data = await BookModel.updateOne({ _id: bookId, user_id: req.tokenData.id }, req.body)
             }
             if (!data) {
                 return res.status(404).json({ message: 'Book not found' });

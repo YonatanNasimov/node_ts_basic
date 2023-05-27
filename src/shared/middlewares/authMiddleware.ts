@@ -23,7 +23,7 @@ export const verifyUser = async (req: Request | any, res: Response, next: NextFu
         );
         // add to req , so the next function will recognize
         // the tokenData/payload
-        console.log("From verifyUser: " + JSON.stringify(payload));
+        // console.log("From verifyUser: " + JSON.stringify(payload));
         req.tokenData = payload;
 
         next();
@@ -43,7 +43,7 @@ export const verifyAdmin = async (req: Request | any, res: Response, next: NextF
         let payload: IToken | jwt.JsonWebTokenError = await verifyToken(
             token
         );
-        console.log("From verifyAdmin: " + JSON.stringify(payload));
+        // console.log("From verifyAdmin: " + JSON.stringify(payload));
 
         if (payload.role != "admin") {
             return res.status(401).json({ message: "Token invalid or expired, code: 3" })

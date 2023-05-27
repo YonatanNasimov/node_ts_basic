@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 class IndexCtrl {
     public index(req: Request, res: Response): void {
-        res.json({ msg: "Express Work..." })
+        res.json({ message: "Express Work..." })
     }
 }
 
