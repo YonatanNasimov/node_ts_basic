@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["DOM", "ES2022"],
+    "baseUrl": ".",
+    "outDir": "./build",
+    "rootDir": "src",
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "plugins": [{ "transform": "typescript-transform-paths" }, { "transform": "typescript-transform-paths", "afterDeclarations": true }],
+    "paths": {
+      "@index/*": ["src/features/index/*"],
+      "@auth/*": ["src/features/auth/*"],
+      "@books/*": ["src/features/books/*"],
+      "@decorators/*": ["src/shared/decorators/*"],
+      "@helpers/*": ["src/shared/helpers/*"],
+      "@middlewares/*": ["src/shared/middlewares/*"],
+      "@root/*": ["src/*"] //must to be last.
+    }
+  }
+}
