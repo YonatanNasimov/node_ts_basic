@@ -1,9 +1,9 @@
 import express, { Router } from "express";
-import { authCtrl } from "@auth/auth.controler";
+import { usersCtrl } from "@users/users.controler";
 
-const AUTH_PATH = '/auth';
+const USERS_PATH = '/users';
 
-class AuthRoutes {
+class UsersRoutes {
     private router: Router;
 
     constructor() {
@@ -11,14 +11,10 @@ class AuthRoutes {
     }
 
     public routes(): Router {
-        // test
-        this.router.get(`${AUTH_PATH}`, authCtrl.auth);
-        // signup
-        this.router.post(`${AUTH_PATH}/signup`, authCtrl.signup);
-        // login
-        this.router.post(`${AUTH_PATH}/login`, authCtrl.login);
+        this.router.get(`${USERS_PATH}`, usersCtrl.users);
+        
         return this.router;
     }
 };
 
-export const authRoutes: AuthRoutes = new AuthRoutes();
+export const usersRoutes: UsersRoutes = new UsersRoutes();

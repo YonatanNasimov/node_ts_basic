@@ -13,7 +13,7 @@ class BookRoutes {
 
     public routes(): Router {
         // test
-        this.router.get(`${BOOK_PATH}`, verifyUser, bookCtrl.book);
+        this.router.get(`${BOOK_PATH}`, bookCtrl.book);
         // getallbooks
         this.router.get(`${BOOK_PATH}/getallbooks`, verifyUser, bookCtrl.getAllBooks);
         // create a book

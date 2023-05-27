@@ -24,6 +24,7 @@
       "@index/*": ["src/features/index/*"],
       "@auth/*": ["src/features/auth/*"],
       "@books/*": ["src/features/books/*"],
+      "@users/*": ["src/features/users/*"],
       "@decorators/*": ["src/shared/decorators/*"],
       "@helpers/*": ["src/shared/helpers/*"],
       "@middlewares/*": ["src/shared/middlewares/*"],
